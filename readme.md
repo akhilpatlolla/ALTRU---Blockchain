@@ -54,13 +54,6 @@ To do this on OSX you can simply add them to your .profile or .bashrc file.
 
 [![node-login](./readme.img/retrieve-password.jpg?raw=true)](https://nodejs-login.herokuapp.com)
 
-## Live Demo
-
-A [Live Demo](https://nodejs-login.herokuapp.com) and [some thoughts about the app's architecture.](http://kitchen.braitsch.io/building-a-login-system-in-node-js-and-mongodb/)
-
-For testing purposes you can view a [database dump of all accounts here](https://nodejs-login.herokuapp.com/print).    
-Note this database automatically resets every 24 hours.
-
 ## Contributing
 
 Questions and suggestions for improvement are welcome.
