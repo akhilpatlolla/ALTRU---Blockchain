@@ -28,7 +28,7 @@
 1. Install [Node.js](https://nodejs.org/) & [MongoDB](https://www.mongodb.org/) if you haven't already.
 2. Clone this repository and install its dependencies.
 		
-		> git clone git://github.com/braitsch/node-login.git ALTRU---Blockchain
+		> git clone git@github.com:akhilpatlolla/ALTRU---Blockchain.git
 		> cd ALTRU---Blockchain
 		> npm install
 		
