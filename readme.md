@@ -1,6 +1,6 @@
-# [Node-Login](https://nodejs-login.herokuapp.com)
+# [ALTRU---Blockchain](https://nodejs-login.herokuapp.com)
 
-[![node-login](./readme.img/node-login.jpg?raw=true)](https://nodejs-login.herokuapp.com)
+[![ALTRU---Blockchain](./readme.img/ALTRU---Blockchain.jpg?raw=true)](https://nodejs-login.herokuapp.com)
 
 ### A basic account management system built in Node.js with the following features:
 
@@ -12,7 +12,7 @@
 * Blowfish-based Scheme Password Encryption
 
 
-### Node-Login is built on top of the following libraries :
+### ALTRU---Blockchain is built on top of the following libraries :
 
 * [Node.js](http://nodejs.org/) - Application Server
 * [Express.js](http://expressjs.com/) - Node.js Web Framework
@@ -28,8 +28,8 @@
 1. Install [Node.js](https://nodejs.org/) & [MongoDB](https://www.mongodb.org/) if you haven't already.
 2. Clone this repository and install its dependencies.
 		
-		> git clone git://github.com/braitsch/node-login.git node-login
-		> cd node-login
+		> git clone git://github.com/braitsch/node-login.git ALTRU---Blockchain
+		> cd ALTRU---Blockchain
 		> npm install
 		
 3. In a separate shell start the MongoDB daemon.
@@ -38,21 +38,21 @@
 
 4. From within the node-login directory, start the server.
 
-		> node app
+		> node app or npm start
 		
 5. Open a browser window and navigate to: [http://localhost:3000](http://localhost:3000)
 
 ## Password Retrieval
 
-To enable the password retrieval feature it is recommended that you create environment variables for your credentials instead of hard coding them into the [email dispatcher module](https://github.com/braitsch/node-login/blob/master/app/server/modules/email-dispatcher.js).
+To enable the password retrieval feature it is recommended that you create environment variables for your credentials instead of hard coding them into the [email dispatcher module](https://github.com/akhilpatlolla/ALTRU---Blockchain/blob/master/app/server/modules/email-dispatcher.js).
 
-To do this on OSX you can simply add them to your .profile or .bashrc file.
+To do this on Unix system / OSX you can simply add them to your .profile or .bashrc file.
 
 	export EMAIL_HOST='smtp.gmail.com'
 	export EMAIL_USER='your.email@gmail.com'
 	export EMAIL_PASS='1234'
 
-[![node-login](./readme.img/retrieve-password.jpg?raw=true)](https://nodejs-login.herokuapp.com)
+[![ALTRU---Blockchain](./readme.img/retrieve-password.jpg?raw=true)](https://nodejs-login.herokuapp.com)
 
 ## Contributing
 
