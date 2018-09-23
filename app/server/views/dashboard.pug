@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+    	nav.navbar.navbar-default.navbar-fixed-top
+		.container
+			.navbar-header
+				.navbar-brand Dashboard
+			ul.nav.navbar-nav.navbar-right
+				li
+					.navbar-btn#btn-logout.btn.btn-default
+						| Sign Out
+        
+        include overview
+        include transaction
+
+block scripts
+    script(src= 'js/views/dashboard.js')
+    script(src= 'js/controllers/homeController.js')

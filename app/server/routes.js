@@ -39,6 +39,17 @@ module.exports = function(app) {
 	});
 	
 // logged-in user homepage //
+	app.get('/dashboard', function(req, res){
+		if (req.session.user == null){
+			res.redirect('/');
+		}else{
+			res.render('dashboard',{
+				title: 'dashboard',
+				countries : CT,
+				udata: req.session.user
+			})
+		}
+	});
 	
 	app.get('/home', function(req, res) {
 		if (req.session.user == null){

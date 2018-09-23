@@ -1,5 +1,10 @@
+
+var    express = require('express'),
+app = express(),
+path = require('path'),
+less = require('less-middleware');
 const SHA256 = require("crypto-js/sha256");
-console.log(">>> launching ALTRU Coin:");
+console.log(">>> launching AltruBit :");
 
 class Transaction {
     constructor(fromAddress, toAddress, amount) {
@@ -106,25 +111,56 @@ class Blockchain {
         return true;
     }
 }
+
+
+app.use(less(path.join(__dirname,'source','less'),{
+    dest: path.join(__dirname, 'dashboard'),
+    options: {
+        compiler: {
+            compress: false,
+        },
+    },
+    preprocess: {
+        path: function(pathname, req) {
+            return pathname.replace('/css/','/'); 
+        },
+    },
+    force: true,
+}));
+// serve static content
+app.use(express.static(path.join(__dirname, 'dashboard')));
+console.log("Creating a user Akhil Patlolla");
+add1 = SHA256('akhilpatlolla').toString();
+
+console.log("Creating a user Ximena");
+add2 = SHA256('ximena').toString();
+
+console.log("Creating MINER: Xavier");
+miner = SHA256('xavier').toString();
 console.log(">>> custom blockchain created");
 let ALTRU_coin = new Blockchain();
-console.log("ALTRU Coin is ready to launch, Have good time mining it. :D :D ");
-console.log("Off to debug log.");
+console.log("ALTRU is ready to launch, Have good time mining it. :D :D ");
 
-console.log("address 1 is sending 100 to address 2");
-ALTRU_coin.createTransaction(new Transaction('address1', 'address2', 100));
+console.log("Akhil  is sending 100 to Ximena for 100 hours");
+ALTRU_coin.createTransaction(new Transaction(add1, add2, 100));
 
-console.log("address 2 is sending 50 to address 1");
-ALTRU_coin.createTransaction(new Transaction('address2', 'address1', 50));
+console.log("Ximena is sending 50 to Akhil for some purchase in university ");
+ALTRU_coin.createTransaction(new Transaction(add2, add1, 50));
 
-console.log('\n Starting the miner...');
-ALTRU_coin.minePendingTransactions('xaviers-address');
+console.log('Xavier is Starting the miner...');
+ALTRU_coin.minePendingTransactions(miner);
 
-console.log('\nBalance of xavier is', ALTRU_coin.getBalanceOfAddress('xaviers-address'));
+console.log('Balance of xavier is', ALTRU_coin.getBalanceOfAddress(miner));
 
-console.log('\n Starting the miner again...');
-ALTRU_coin.minePendingTransactions('xaviers-address');
+console.log('Xavier is Starting the miner again...');
+ALTRU_coin.minePendingTransactions('miner');
 
-console.log('\nBalance of xavier is', ALTRU_coin.getBalanceOfAddress('xaviers-address'));
+console.log('Balance of xavier is', ALTRU_coin.getBalanceOfAddress(miner));
+console.log('Balance of Akhil is ',ALTRU_coin.getBalanceOfAddress(add1));
+console.log('Balance of Ximena is ',ALTRU_coin.getBalanceOfAddress(add2));
 
-console.log('\nBalance of xavier is', ALTRU_coin.getBalanceOfAddress('xaviers-address'));
+
+module.exports = {Blockchain, Block, Transaction, ALTRU_coin};
+
+console.log("AltruBit is listening to 1337 port number : http:localhost:1337");
+var server = app.listen(1337);
